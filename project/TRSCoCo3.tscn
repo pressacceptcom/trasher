@@ -1,0 +1,119 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://tcc1014.gd" type="Script" id=1]
+[ext_resource path="res://Label.gd" type="Script" id=2]
+[ext_resource path="res://memory.gd" type="Script" id=3]
+[ext_resource path="res://mc68b09e.gd" type="Script" id=4]
+[ext_resource path="res://ThreeTwenty16.gd" type="Script" id=5]
+[ext_resource path="res://SixForty4.gd" type="Script" id=6]
+[ext_resource path="res://TwoFiftySix16.gd" type="Script" id=7]
+[ext_resource path="res://FiveTwelve4.gd" type="Script" id=8]
+[ext_resource path="res://OneSixty16.gd" type="Script" id=9]
+[ext_resource path="res://ThreeTwenty4.gd" type="Script" id=10]
+[ext_resource path="res://SixForty2.gd" type="Script" id=11]
+[ext_resource path="res://TwoFiftySix4.gd" type="Script" id=12]
+[ext_resource path="res://FiveTwelve2.gd" type="Script" id=13]
+[ext_resource path="res://TwoFiftySix2.gd" type="Script" id=14]
+
+[node name="ACVC" type="TextureRect"]
+script = ExtResource( 1 )
+
+[node name="Processor" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="Memory" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 736.0
+margin_top = 2.0
+margin_right = 943.0
+margin_bottom = 65.0
+script = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 733.0
+margin_top = 68.0
+margin_right = 935.0
+margin_bottom = 107.0
+text = "THREE_TWENTY_16"
+script = ExtResource( 5 )
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 734.0
+margin_top = 119.0
+margin_right = 936.0
+margin_bottom = 158.0
+text = "SIX_FORTY_4"
+script = ExtResource( 6 )
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 734.0
+margin_top = 170.0
+margin_right = 936.0
+margin_bottom = 209.0
+text = "TWO_FIFTY_SIX_16"
+script = ExtResource( 7 )
+
+[node name="Button4" type="Button" parent="."]
+margin_left = 734.0
+margin_top = 223.0
+margin_right = 936.0
+margin_bottom = 262.0
+text = "FIVE_TWELVE_4"
+script = ExtResource( 8 )
+
+[node name="Button5" type="Button" parent="."]
+margin_left = 734.0
+margin_top = 275.0
+margin_right = 936.0
+margin_bottom = 314.0
+text = "ONE_SIXTY_16"
+script = ExtResource( 9 )
+
+[node name="Button6" type="Button" parent="."]
+margin_left = 734.0
+margin_top = 327.0
+margin_right = 936.0
+margin_bottom = 366.0
+text = "THREE_TWENTY_4"
+script = ExtResource( 10 )
+
+[node name="Button7" type="Button" parent="."]
+margin_left = 734.0
+margin_top = 379.0
+margin_right = 936.0
+margin_bottom = 418.0
+text = "SIX_FORTY_2"
+script = ExtResource( 11 )
+
+[node name="Button8" type="Button" parent="."]
+margin_left = 734.0
+margin_top = 432.0
+margin_right = 936.0
+margin_bottom = 471.0
+text = "TWO_FIFTY_SIX_4"
+script = ExtResource( 12 )
+
+[node name="Button9" type="Button" parent="."]
+margin_left = 734.0
+margin_top = 484.0
+margin_right = 936.0
+margin_bottom = 523.0
+text = "FIVE_TWELVE_2"
+script = ExtResource( 13 )
+
+[node name="Button10" type="Button" parent="."]
+margin_left = 734.0
+margin_top = 534.0
+margin_right = 936.0
+margin_bottom = 573.0
+text = "TWO_FIFTY_SIX_2"
+script = ExtResource( 14 )
+
+[connection signal="cpu_cycles_requested" from="." to="Processor" method="_on_ACVC_cpu_cycles_requested"]
+[connection signal="horizontal_firq" from="." to="Processor" method="_on_ACVC_horizontal_firq"]
+[connection signal="horizontal_irq" from="." to="Processor" method="_on_ACVC_horizontal_irq"]
+[connection signal="memory_accessed" from="." to="Memory" method="_on_ACVC_memory_accessed"]
+[connection signal="memory_accessed_by_vdg" from="." to="Memory" method="_on_ACVC_memory_accessed_by_vdg"]
+[connection signal="bus_accessed" from="Processor" to="." method="_on_Processor_bus_accessed"]

@@ -1,0 +1,66 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "Mc6821",
+"language": "GDScript",
+"path": "res://mc6821.gd"
+}, {
+"base": "Node",
+"class": "Mc68b09e",
+"language": "GDScript",
+"path": "res://mc68b09e.gd"
+}, {
+"base": "Node",
+"class": "Memory",
+"language": "GDScript",
+"path": "res://memory.gd"
+}, {
+"base": "Node",
+"class": "Mmu",
+"language": "GDScript",
+"path": "res://mmu.gd"
+}, {
+"base": "TextureRect",
+"class": "Tcc1014",
+"language": "GDScript",
+"path": "res://tcc1014.gd"
+}, {
+"base": "TextureRect",
+"class": "VideoGraphics",
+"language": "GDScript",
+"path": "res://videographics.gd"
+} ]
+_global_script_class_icons={
+"Mc6821": "",
+"Mc68b09e": "",
+"Memory": "",
+"Mmu": "",
+"Tcc1014": "",
+"VideoGraphics": ""
+}
+
+[application]
+
+config/name="Trasher - TRS-80 Emulator & IDE"
+run/main_scene="res://TRSCoCo3.tscn"
+config/icon="res://icon.png"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://default_env.tres"
